@@ -1,30 +1,11 @@
-peline {
+pipeline {
     agent any
 
     stages {
-        stage('Checkout GIT') {
+        stage('Hello') {
             steps {
-                echo 'Pulling... ';
-                    git branch: 'main',
-                        url : 'https://github.com/olfaBenafia/DevOPs.git',
-                        credentialsId: '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';
+                echo 'Hello World'
             }
         }
-
-        stage('Cleaning the project') {     
-            steps {
-                echo 'cleaning project ...'
-                sh 'mvn clean package'
-            }
-        }
-        
-        stage('Compiling the artifact') {             
-            steps {
-                echo "compiling"
-                sh 'mvn compile'
-            }
-        }
-}
-                   
-          
+    }
 }
