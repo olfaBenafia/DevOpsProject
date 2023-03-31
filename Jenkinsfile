@@ -60,7 +60,7 @@ pipeline {
         }
         stage ('Docker push'){
         	steps {
-        	//sh 'docker push olfabenafia/tpachatproject-1.0:latest'
+        	// sh 'docker push olfabenafia/tpachatproject-1.0:latest'
         	}
         }
         stage ('Docker logout'){
