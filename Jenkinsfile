@@ -32,16 +32,22 @@ pipeline {
 			sh "mvn package -DskipTests"          
             } 
         }
-        stage('NEXUS') {
-            steps {
-                sh 'mvn clean deploy -Dmaven.test.skip=true -Dresume=false'
-            }
-        }
+//         stage('NEXUS') {
+//             steps {
+//                 sh 'mvn clean deploy -Dmaven.test.skip=true -Dresume=false'
+//             }
+//         }
 // 	 stage('SONAR') {
 //             steps {
 //                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=olfa1999'
 //             }
 // 	 }
+	   stage ('Mockito/Junit') {
+             steps {
+            sh 'mvn test -Dtest="SecteurActiviteServiceImplMock" '
+            sh 'mvn test -Dtest="FournisseurServiceImplTest" '
+            }
+        } 
         stage ('Docker build') {
              steps {
             sh ' docker build -t olfabenafia/tpachatproject-1.0:latest .'
@@ -54,7 +60,7 @@ pipeline {
         }
         stage ('Docker push'){
         	steps {
-        	sh 'docker push olfabenafia/tpachatproject-1.0:latest'
+        	//sh 'docker push olfabenafia/tpachatproject-1.0:latest'
         	}
         }
         stage ('Docker logout'){
