@@ -70,6 +70,11 @@
 <repository>
 <id>deploymentRepo</id>
 <url>http://172.10.0.140:8081/repository/maven-releases/</url>
+	<releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+        </releases>
+
 	
 </repository>
 </distributionManagement>
