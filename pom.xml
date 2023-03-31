@@ -79,7 +79,7 @@
 	
 </repository>
 	<snapshotRepository>
-        <id>nexus-snap</id>
+        <id>deploymentRepo</id>
         <name>nexus-snap</name>
        <url>http://172.10.0.140:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
