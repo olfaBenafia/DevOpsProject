@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout GIT') {
             steps {
                 echo 'Pulling... ';
-                    git branch: 'main',
+                    git branch: 'obenafia',
                         url : 'https://github.com/olfaBenafia/DevOpsProject.git',
                         credentialsId: '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';
             }
