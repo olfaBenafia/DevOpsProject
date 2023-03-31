@@ -37,11 +37,11 @@ pipeline {
                 sh 'mvn clean deploy -Dmaven.test.skip=true -Dresume=false'
             }
         }
-// 	 stage('SONAR') {
-//             steps {
-//                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=olfa1999'
-//             }
-// 	 }
+	 stage('SONAR') {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=olfa1999'
+            }
+	 }
 	   stage ('Mockito/Junit') {
              steps {
             sh 'mvn test -Dtest="SecteurActiviteServiceImplMock" '
