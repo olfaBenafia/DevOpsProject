@@ -58,11 +58,11 @@ pipeline {
         	sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
         	}
         }
-//         stage ('Docker push'){
-//         	steps {
-//         	 sh 'docker push olfabenafia/tpachatproject-1.0:latest'
-//         	}
-//         }
+        stage ('Docker push'){
+        	steps {
+        	 sh 'docker push olfabenafia/tpachatproject-1.0:latest'
+        	}
+        }
         stage ('Docker logout'){
         	steps {
         	sh 'docker logout'
